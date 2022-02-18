@@ -4,9 +4,9 @@ pipeline {
         maven 'maven38'
     }
     stages{
-        stage ('Get the source code') {
+        stage("Fetch repository") {
             steps {
-                git branch: 'master', credentialsId: 'dhulipallak-github', url: git 'https://github.com/dhulipallak/addressbook.git'
+                git 'https://github.com/dhulipallak/addressbook.git'
             }
         }
         stage ('Compile App') {
